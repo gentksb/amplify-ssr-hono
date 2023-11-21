@@ -1,6 +1,9 @@
 {
   "scripts": {
-    "start": "tsx watch src/index.ts"
+    "start": "tsx watch src/index.ts",
+    "build": "echo 'copy ts to .amplify-hosting'",
+    "serve": "tsx watch src/index.ts",
+    "postbuild": "chmod +x bin/postbuild.sh && ./bin/postbuild.sh"
   },
   "dependencies": {
     "@hono/node-server": "^1.2.3",
