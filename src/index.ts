@@ -1,5 +1,6 @@
 import { serve } from "@hono/node-server";
 import { serveStatic } from "@hono/node-server/serve-static";
+import { logger } from "hono/logger";
 import { Hono } from "hono";
 import { html } from "hono/html";
 
@@ -30,6 +31,8 @@ const layout = html`
         <img
           src="${imagePath}?width=400&height=300"
           alt="image-compare-2 optimized"
+          width="400"
+          height="300"
         />
       </div>
     </body>
@@ -40,10 +43,13 @@ app.get("/", (c) => {
   return c.html(layout);
 });
 
+app.use("*", logger());
+
 app.use(
   "/images/*",
   serveStatic({
     root: "./",
   })
 );
+
 serve(app);
