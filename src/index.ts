@@ -15,22 +15,20 @@ const layout = html`
       <p>
         ブラウザ開発者ツールからそれぞれの画像サイズを見るとサイズ圧縮されていることが分かります
       </p>
-      <h2 className="text-2xl bold">Native HTML image</h3>
-      <div className="w-full">
+      <h2">Native HTML image</h3>
+      <div>
         <img
           src="${imagePath}"
           alt="image-compare-1 native"
-          width="{800}"
-          height="{600}"
-          className="mx-auto"
+          width="400"
+          height="300"
         />
       </div>
-      <h2 className="text-2xl bold">Parameter-based optimized image</h3>
-      <div className="w-full">
+      <h2>Parameter-based optimized image</h3>
+      <div>
         <img
           src="${imagePath}?width=400&height=300"
           alt="image-compare-2 optimized"
-          className="mx-auto"
         />
       </div>
     </body>
