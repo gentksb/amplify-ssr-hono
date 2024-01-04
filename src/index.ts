@@ -1,10 +1,10 @@
-import { serve } from "@hono/node-server"
-import { serveStatic } from "@hono/node-server/serve-static"
-import { Hono } from "hono"
-import { html } from "hono/html"
+import { serve } from "@hono/node-server";
+import { serveStatic } from "@hono/node-server/serve-static";
+import { Hono } from "hono";
+import { html } from "hono/html";
 
-const app = new Hono()
-const imagePath = "/images/1600x1200.png"
+const app = new Hono();
+const imagePath = "/images/1600x1200.png";
 
 const layout = html`
   <html lang="ja">
@@ -34,17 +34,16 @@ const layout = html`
       </div>
     </body>
   </html>
-`
+`;
 
-app.get("/", c => {
-  return c.html(layout)
-})
+app.get("/", (c) => {
+  return c.html(layout);
+});
 
 app.use(
   "/images/*",
   serveStatic({
     root: "./",
-    rewriteRequestPath: path => path.replace(/^\/images/, "/src/images"),
   })
-)
-serve(app)
+);
+serve(app);
