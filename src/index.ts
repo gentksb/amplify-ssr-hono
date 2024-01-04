@@ -5,7 +5,7 @@ import { Hono } from "hono";
 import { html } from "hono/html";
 
 const app = new Hono();
-const imagePath = "/images?url=%2Fimages%2F1600x1200.png";
+const imagePath = "/images/optimized?url=%2Fimages%2F1600x1200.png";
 
 const layout = html`
   <html lang="ja">

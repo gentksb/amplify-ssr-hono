@@ -11,7 +11,7 @@
   },
   "routes": [
     {
-      "path": "/images/*",
+      "path": "/images/optimized/*",
       "target": {
         "kind": "ImageOptimization",
         "cacheControl": "public, max-age=31536000, immutable"
