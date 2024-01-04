@@ -14,7 +14,7 @@
       "path": "/images/*",
       "target": {
         "kind": "ImageOptimization",
-        "cacheControl": "public, max-age=3600, immutable"
+        "cacheControl": "public, max-age=31536000, immutable"
       }
     },
     {
