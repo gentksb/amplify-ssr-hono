@@ -22,7 +22,7 @@ const layout = html`
         <img
           src="${imagePath}&width=1200"
           alt="image-compare-1 native"
-          width="400"
+          width="1200"
           height="300"
         />
       </div>
