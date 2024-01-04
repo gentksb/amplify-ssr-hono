@@ -2,10 +2,10 @@
   "version": 1,
   "framework": { "name": "hono", "version": "3.10.2" },
   "imageSettings": {
-    "sizes": [100, 200, 1920],
+    "sizes": [150, 400, 600, 1200, 1920],
     "domains": [],
     "remotePatterns": [],
-    "formats": [],
+    "formats": ["image/avif", "image/webp", "image/png", "image/jpeg"],
     "minimumCacheTTL": 60,
     "dangerouslyAllowSVG": false
   },
