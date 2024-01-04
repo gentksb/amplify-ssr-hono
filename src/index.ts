@@ -49,6 +49,7 @@ app.use(
   "/images/*",
   serveStatic({
     root: "./",
+    rewriteRequestPath: (path) => path.replace(/^\/images/, "/static/images"),
   })
 );
 
