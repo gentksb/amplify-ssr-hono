@@ -13,17 +13,16 @@ const layout = html`
       <title>Image Rendering Test</title>
     </head>
     <body>
-      <h1>Image Compare(1600x1200 origin or w400 view)</h1>
+      <h1>Image Compare(1600x1200 origin w400 view)</h1>
       <p>
         ブラウザ開発者ツールからそれぞれの画像サイズを見るとサイズ圧縮されていることが分かります
       </p>
-      <h2>Native HTML image</h3>
+      <h2>Native image</h3>
       <div>
         <img
-          src="${imagePath}&width=1200"
+          src="/images/1600x1200.png"
           alt="image-compare-1 native"
-          width="1200"
-          height="300"
+          width="400"
         />
       </div>
       <h2>Parameter-based optimized image</h3>
@@ -32,7 +31,6 @@ const layout = html`
           src="${imagePath}&width=400"
           alt="image-compare-2 optimized"
           width="400"
-          height="300"
         />
       </div>
     </body>
