@@ -5,7 +5,7 @@ import { Hono } from "hono";
 import { html } from "hono/html";
 
 const app = new Hono();
-const imagePath = "/images/optimized?url=%2Fimages%2F1600x1200.png";
+const imagePath = "/images/optimized/?url=%2Fimages%2F1600x1200.png";
 
 const layout = html`
   <html lang="ja">
@@ -20,7 +20,7 @@ const layout = html`
       <h2>Native HTML image</h3>
       <div>
         <img
-          src="${imagePath}&width=1600"
+          src="${imagePath}&width=1200"
           alt="image-compare-1 native"
           width="400"
           height="300"
