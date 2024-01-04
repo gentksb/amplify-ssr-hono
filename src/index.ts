@@ -16,7 +16,7 @@ const layout = html`
       <p>
         ブラウザ開発者ツールからそれぞれの画像サイズを見るとサイズ圧縮されていることが分かります
       </p>
-      <h2">Native HTML image</h3>
+      <h2>Native HTML image</h3>
       <div>
         <img
           src="${imagePath}"
@@ -40,5 +40,11 @@ app.get("/", c => {
   return c.html(layout)
 })
 
-app.use("/images/*", serveStatic({ root: "./" }))
+app.use(
+  "/images/*",
+  serveStatic({
+    root: "./",
+    rewriteRequestPath: path => path.replace(/^\/images/, "/src/images"),
+  })
+)
 serve(app)
