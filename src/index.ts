@@ -1,4 +1,5 @@
 import { serve } from "@hono/node-server"
+import { serveStatic } from "@hono/node-server/serve-static"
 import { Hono } from "hono"
 import { html } from "hono/html"
 
@@ -36,8 +37,8 @@ const layout = html`
 `
 
 app.get("/", c => {
-  const userAgent = c.req.raw.headers.get("User-Agent")
   return c.html(layout)
 })
 
+app.use("/images/*", serveStatic({ root: "./" }))
 serve(app)
